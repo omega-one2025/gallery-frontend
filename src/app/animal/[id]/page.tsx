@@ -1,9 +1,13 @@
 import { type Animal, animals } from '@/static/animal';
 
-export default function Animal({ params }: { params: { id: string } }) {
-  const animal: Animal | undefined = animals.find(
-    (animal) => animal.id === params.id
-  );
+interface Props {
+  params: Promise<{ id: string }>;
+}
+
+// export default async function Animal() {
+const Animal: React.FC<Props> = async ({ params }) => {
+  const { id } = await params;
+  const animal: Animal | undefined = animals.find((animal) => animal.id === id);
 
   return (
     <main className="flex fixed inset-0 items-center justify-center">
@@ -21,4 +25,6 @@ export default function Animal({ params }: { params: { id: string } }) {
       )}
     </main>
   );
-}
+};
+
+export default Animal;
