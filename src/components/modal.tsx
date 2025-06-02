@@ -44,7 +44,7 @@ function ModalContent({ children, className = '' }: ModalProps) {
 function ModalOverlay({ children, open, className = '' }: ModalProps) {
   return (
     <div
-      className={`fixed top-0 left-0 w-screen h-screen z-40 flex justify-center items-center ${className}`}
+      className={`fixed top-0 left-0 w-screen h-screen z-40 overflow-hidden flex justify-center items-center ${className}`}
     >
       {open && (
         <div
