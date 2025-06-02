@@ -16,24 +16,22 @@ export default function Home() {
       </section>
       <section>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 xl:gap-x-8">
-          {animals.map((animal) => {
-            return (
-              <Link
-                key={animal.id}
-                href={`/animal/${animal.id}`}
-                className="group flex flex-col gap-4"
-              >
-                <FallbackImage
-                  width={500}
-                  height={400}
-                  src={animal.imageSrc}
-                  alt={animal.name}
-                  className="object-cover bg-neutral-700 object-center h-full transition-all group-hover:opacity-75"
-                />
-                <h2 className="text-sm">{animal.name}</h2>
-              </Link>
-            );
-          })}
+          {animals.map((animal) => (
+            <Link
+              key={animal.id}
+              href={`/animal/${animal.id}`}
+              className="group flex flex-col gap-4"
+            >
+              <FallbackImage
+                width={500}
+                height={400}
+                src={animal.imageSrc}
+                alt={animal.name}
+                className="object-cover bg-neutral-700 object-center h-full transition-all group-hover:opacity-75"
+              />
+              <h2 className="text-sm">{animal.name}</h2>
+            </Link>
+          ))}
         </div>
       </section>
     </>

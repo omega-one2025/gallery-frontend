@@ -7,18 +7,18 @@ interface ModalProps {
 }
 
 interface ModalContainerProps extends ModalProps {
-  style?: { backgroundImage: string };
+  src: string;
 }
 
 function ModalContainer({
   children,
   className = '',
-  style,
+  src,
 }: ModalContainerProps) {
   return (
     <div
       className={`rounded-2xl bg-neutral-800 ${className}`}
-      style={{ ...style }}
+      style={{ backgroundImage: src }}
     >
       <div className=" w-full h-full rounded-xl">{children}</div>
     </div>
@@ -26,7 +26,7 @@ function ModalContainer({
 }
 
 function ModalHeader({ children, className = '' }: ModalProps) {
-  return <div className={`${className}`}>{children}</div>;
+  return <div className={className}>{children}</div>;
 }
 
 function ModalTitle({ children, className = '' }: ModalProps) {
@@ -38,7 +38,7 @@ function ModalTitle({ children, className = '' }: ModalProps) {
 }
 
 function ModalContent({ children, className = '' }: ModalProps) {
-  return <div className={`${className}`}>{children}</div>;
+  return <div className={className}>{children}</div>;
 }
 
 function ModalOverlay({ children, open, className = '' }: ModalProps) {

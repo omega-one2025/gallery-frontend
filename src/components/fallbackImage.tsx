@@ -18,6 +18,7 @@ export const FallbackImage: React.FC<ImageProps> = ({
         <Image
           {...rest}
           src="/fallback.jpg"
+          priority={false}
           width={width}
           height={height}
           alt={alt}
